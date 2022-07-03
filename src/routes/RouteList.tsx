@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom'
 import { MainPage } from "../pages/MainPage";
-import { PessoaCadastroPage } from '../pages/PessoaCadastroPage';
+import PessoaEditPage from '../pages/PessoaEditPage';
 
 
 
@@ -8,7 +8,7 @@ export const RouteList = () => {
 
     return useRoutes([
         { path: '/', element: <MainPage /> },
-        { path: '/cadastro', element: <PessoaCadastroPage /> }
+        { path: '/pessoas/:id', element: <PessoaEditPage />}
     ]);
 
 }

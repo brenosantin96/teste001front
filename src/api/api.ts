@@ -18,13 +18,34 @@ export const api = {
 
     createPessoa: async (name: string, birthDate: Date) => {
 
-        let response = await axios.post(`${BASE}/pessoas`, {
-            name, birthDate
+        console.log("Api Name: ",name);
+        console.log("Api Birthdate: ", birthDate)
+
+        let response = await axios({
+            method: "post",
+            url: `${BASE}/pessoas`,
+            data: {
+                name: name,
+                birthDate: birthDate
+            }
         });
 
+        if(response){
+            console.log(response);
             return response.data;
+        }
+            
         
 
+    },
+
+    getOnePessoa : async (id: number) => {
+        let response = await axios.get(`${BASE}/pessoas/${id}`);
+        if (response) {
+            return response.data.pessoa;
+        } else {
+            alert("Não foi possível se conectar com a API para pegar dados do usuário.")
+        }
     },
 
     signIn: async (email: string, password: string) => {

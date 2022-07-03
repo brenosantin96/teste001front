@@ -38,3 +38,14 @@ code {
     align-items: center;
     justify-content: center;
 }
+
+.editLink {
+    font-size: 20px;
+    color: rgb(5, 5, 27);
+    transition: all ease .4s;
+    text-decoration: none;
+}
+
+.editLink:hover {
+    background-color: rgb(69, 128, 183);
+}
